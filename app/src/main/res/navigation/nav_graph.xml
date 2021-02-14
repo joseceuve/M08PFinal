@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_Vistas">
+
+    <fragment
+        android:id="@+id/fragment_Vistas"
+        android:name="cat.copernic.pfinal.jose.m08pfinal.Fragment_Vistas"
+        android:label="fragment__vistas"
+        tools:layout="@layout/fragment__vistas" >
+        <action
+            android:id="@+id/action_fragment_Vistas_to_fragment_Detalle"
+            app:destination="@id/fragment_Detalle" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_Detalle"
+        android:name="cat.copernic.pfinal.jose.m08pfinal.Fragment_Detalle"
+        android:label="fragment__detalle"
+        tools:layout="@layout/fragment__detalle" />
+</navigation>
