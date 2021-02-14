@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_Vistas"
-        android:name="cat.copernic.pfinal.jose.m08pfinal.Fragment_Vistas"
+        android:name="cat.copernic.pfinal.jose.m08pfinal.overview.Fragment_Vistas"
         android:label="fragment__vistas"
         tools:layout="@layout/fragment__vistas" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_Detalle"
-        android:name="cat.copernic.pfinal.jose.m08pfinal.Fragment_Detalle"
+        android:name="cat.copernic.pfinal.jose.m08pfinal.detalle.Fragment_Detalle"
         android:label="fragment__detalle"
         tools:layout="@layout/fragment__detalle" />
 </navigation>

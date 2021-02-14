@@ -1,17 +1,16 @@
-package cat.copernic.pfinal.jose.m08pfinal
+package cat.copernic.pfinal.jose.m08pfinal.overview
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import cat.copernic.pfinal.jose.m08pfinal.R
 
 /**
- * Fragmento que muestra el detalle
+ * Fragmento de las vistas
  */
-class Fragment_Detalle : Fragment() {
-
-
+class Fragment_Vistas : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,8 +21,7 @@ class Fragment_Detalle : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__detalle, container, false)
+        return inflater.inflate(R.layout.fragment__vistas, container, false)
     }
-
 
 }
