@@ -12,11 +12,16 @@
         tools:layout="@layout/fragment__vistas" >
         <action
             android:id="@+id/action_fragment_Vistas_to_fragment_Detalle"
-            app:destination="@id/fragment_Detalle" />
+            app:destination="@id/detalleFragmento" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_Detalle"
+        android:id="@+id/detalleFragmento"
         android:name="cat.copernic.pfinal.jose.m08pfinal.detalle.Fragment_Detalle"
         android:label="fragment__detalle"
-        tools:layout="@layout/fragment__detalle" />
+        tools:layout="@layout/fragment__detalle" >
+        <argument
+            android:name="selectedProperty"
+            app:argType="cat.copernic.pfinal.jose.m08pfinal.network.CourseProperty"
+    />
+    </fragment>
 </navigation>

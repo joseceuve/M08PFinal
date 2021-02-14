@@ -1,21 +1,22 @@
 package cat.copernic.pfinal.jose.m08pfinal.overview
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import cat.copernic.pfinal.jose.m08pfinal.R
+import cat.copernic.pfinal.jose.m08pfinal.databinding.FragmentVistasBinding
+import cat.copernic.pfinal.jose.m08pfinal.network.CourseApiFilter
 
 /**
  * Fragmento de las vistas
  */
 class Fragment_Vistas : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    private val viewModel: VistasViewModel by Lazy{
+        ViewModelProvider(this).get(VistasViewModel::class.java)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
