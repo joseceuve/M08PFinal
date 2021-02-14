@@ -1,5 +1,6 @@
 package cat.copernic.pfinal.jose.m08pfinal.overview
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -16,6 +17,7 @@ class AdaptadorFotoGrid(private val onClickListener: OnClickListener): ListAdapt
         RecyclerView.ViewHolder(binding.root) {
         fun bind(marsProperty: CourseProperty) {
            // binding.property = marsProperty creo que es la propiedad GONE O VISIBLE
+            Log.e("Jose","CurseProperty")
             binding.executePendingBindings()
         }
     }
@@ -23,10 +25,12 @@ class AdaptadorFotoGrid(private val onClickListener: OnClickListener): ListAdapt
 
     companion object DiffCallback : DiffUtil.ItemCallback<CourseProperty>() {
         override fun areItemsTheSame(oldItem: CourseProperty, newItem: CourseProperty): Boolean {
+            Log.e("Jose","Old Item")
             return oldItem === newItem
         }
 
         override fun areContentsTheSame(oldItem: CourseProperty, newItem: CourseProperty): Boolean {
+            Log.e("Jose","areContents")
             return oldItem.numSemi == newItem.numSemi
         }
     }
@@ -36,6 +40,7 @@ class AdaptadorFotoGrid(private val onClickListener: OnClickListener): ListAdapt
      */
     override fun onCreateViewHolder(parent: ViewGroup,
                                     viewType: Int): CursePropertyViewHolder {
+        Log.e("Jose","onCreate")
         return CursePropertyViewHolder(FragmentVistasBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
@@ -47,6 +52,7 @@ class AdaptadorFotoGrid(private val onClickListener: OnClickListener): ListAdapt
         holder.itemView.setOnClickListener {
             onClickListener.onClick(marsProperty)
         }
+        Log.e("Jose","onBinding")
         holder.bind(marsProperty)
     }
 

@@ -1,6 +1,7 @@
 package cat.copernic.pfinal.jose.m08pfinal.detalle
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ class Fragment_Detalle : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.e("Jose","Fragment_Detalle")
         val application = requireNotNull(activity).application
         val binding = FragmentDetalleBinding.inflate(inflater)
         binding.lifecycleOwner = this

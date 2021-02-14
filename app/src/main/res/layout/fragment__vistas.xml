@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-
+        <variable
+            name="viewModel"
+            type="cat.copernic.pfinal.jose.m08pfinal.overview.VistasViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout 
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".overview.Fragment_Vistas" />
+    tools:context=".overview.Fragment_Vistas" >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/photos_grid"
+        android:layout_width="match_parent"
+        app:listData="@{viewModel.properties}"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/status_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:marsApiStatus="@{viewModel.status}" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

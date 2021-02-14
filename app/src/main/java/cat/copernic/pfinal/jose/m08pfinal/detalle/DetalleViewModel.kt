@@ -1,6 +1,7 @@
 package cat.copernic.pfinal.jose.m08pfinal.detalle
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,6 +14,7 @@ class DetalleViewModel( courseProperty: CourseProperty, app: Application): Andro
         get() = _selectedProperty
 
     init {
+        Log.e("Jose","init")
         _selectedProperty.value = courseProperty
     }
 

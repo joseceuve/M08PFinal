@@ -1,5 +1,6 @@
 package cat.copernic.pfinal.jose.m08pfinal
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
@@ -27,6 +28,7 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<CourseProperty>?) {
  */
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
+    Log.e("Jose","imageUrl")
     imgUrl?.let {
         val imgUri = imgUrl.toUri().buildUpon().scheme("https").build()
         Glide.with(imgView.context)
@@ -47,15 +49,19 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 @BindingAdapter("marsApiStatus")
 fun bindStatus(statusImageView: ImageView, status: CourseApiSatatus?) {
     when (status) {
+
         CourseApiSatatus.LOADING -> {
+            Log.e("Jose","Loading")
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.ic_launcher_background) //Animacion de loading en R.drawable....
         }
         CourseApiSatatus.ERROR -> {
+            Log.e("Jose","Error")
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.ic_launcher_background) //Imagen Error no cargada
         }
         CourseApiSatatus.DONE -> {
+            Log.e("Jose","DONE")
             statusImageView.visibility = View.GONE
         }
     }

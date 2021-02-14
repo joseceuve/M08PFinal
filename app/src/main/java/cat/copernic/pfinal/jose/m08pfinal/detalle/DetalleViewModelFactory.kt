@@ -1,6 +1,7 @@
 package cat.copernic.pfinal.jose.m08pfinal.detalle
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import cat.copernic.pfinal.jose.m08pfinal.network.CourseProperty
@@ -12,8 +13,11 @@ class DetalleViewModelFactory(
 ) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        Log.e("Jose","Nose")
         if (modelClass.isAssignableFrom(DetalleViewModel::class.java)) {
+
             return DetalleViewModel(courseProperty, application) as T
+
         }
         throw IllegalArgumentException("Clase ViewModel desconocida")
     }

@@ -26,7 +26,10 @@ private val retrofit = Retrofit.Builder()
 interface CourseApiService {
     @GET("~jmendez1/forteco/courses.json")
     suspend fun getProperties(@Query("filter") type: String): List<CourseProperty>
+
 }
 object CourseApi{
-    val retrofitService: CourseApiService by Lazy { retrofit.create(CourseApiService::class.java)}
+
+    val retrofitService: CourseApiService by lazy { retrofit.create(CourseApiService::class.java)}
+
 }

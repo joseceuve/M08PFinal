@@ -2,4 +2,7 @@
     <string name="app_name">M08PFinal</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shwAll">Mostrar Todo</string>
+    <string name="shwName">Otro</string>
+    <string name="shwComprar">Comprar</string>
 </resources>
