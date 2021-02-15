@@ -19,6 +19,7 @@ class Fragment_Detalle : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         Log.e("Jose","Fragment_Detalle")
         val application = requireNotNull(activity).application
         val binding = FragmentDetalleBinding.inflate(inflater)
@@ -26,9 +27,9 @@ class Fragment_Detalle : Fragment() {
 
         val courseProperty = Fragment_DetalleArgs.fromBundle(arguments!!).selectedProperty
         val viewModelFactory = DetalleViewModelFactory(courseProperty, application)
-        /*binding.viewModel =  viewModelProvider(
-                this, viewModelFactory).get((DetailViewModel::class.java)
-        )*/ //El bind de la dataclas
+        binding.viewModel = ViewModelProvider(
+            this,viewModelFactory).get(DetalleViewModel::class.java)
+
 
         return binding.root
     }

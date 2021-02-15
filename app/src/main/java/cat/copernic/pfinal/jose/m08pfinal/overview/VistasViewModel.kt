@@ -40,10 +40,12 @@ class VistasViewModel: ViewModel() {
             _status.value = CourseApiSatatus.LOADING
             try {
                 Log.e("Jose","Try")
+                Log.e("Jose", CourseApi.retrofitService.getProperties(filter.value).size.toString()) //Tamaño datos
                 _properties.value = CourseApi.retrofitService.getProperties(filter.value)
                 _status.value = CourseApiSatatus.DONE
             }catch (e: Exception){
                 Log.e("Jose","Catch")
+                Log.e("Jose", e.toString())
                 _status.value = CourseApiSatatus.ERROR
                 _properties.value = ArrayList()
             }

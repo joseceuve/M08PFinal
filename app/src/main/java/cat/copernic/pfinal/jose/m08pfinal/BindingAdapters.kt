@@ -19,6 +19,7 @@ import cat.copernic.pfinal.jose.m08pfinal.network.CourseProperty
  */
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<CourseProperty>?) {
+    Log.e("Jose","bindRecyclerview")
     val adapter = recyclerView.adapter as AdaptadorFotoGrid
     adapter.submitList(data)
 }
@@ -28,14 +29,14 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<CourseProperty>?) {
  */
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
-    Log.e("Jose","imageUrl")
+    Log.e("Jose","Imagen")
     imgUrl?.let {
         val imgUri = imgUrl.toUri().buildUpon().scheme("https").build()
         Glide.with(imgView.context)
             .load(imgUri)
             .apply(RequestOptions()
-                .placeholder(R.drawable.ic_launcher_background) //Imagen de loading
-                .error(R.drawable.ic_launcher_background)) //Imagen broken, no encontrada
+                .placeholder(R.drawable.imagen_carga)
+                .error(R.drawable.notload))
             .into(imgView)
     }
 }
@@ -46,19 +47,19 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
  * displays a broken image to reflect the connection error.  When the request is finished, it
  * hides the image view.
  */
-@BindingAdapter("marsApiStatus")
+@BindingAdapter("courseApiStatus")
 fun bindStatus(statusImageView: ImageView, status: CourseApiSatatus?) {
     when (status) {
 
         CourseApiSatatus.LOADING -> {
             Log.e("Jose","Loading")
             statusImageView.visibility = View.VISIBLE
-            statusImageView.setImageResource(R.drawable.ic_launcher_background) //Animacion de loading en R.drawable....
+            statusImageView.setImageResource(R.drawable.imagen_carga) //Animacion de loading en R.drawable....
         }
         CourseApiSatatus.ERROR -> {
             Log.e("Jose","Error")
             statusImageView.visibility = View.VISIBLE
-            statusImageView.setImageResource(R.drawable.ic_launcher_background) //Imagen Error no cargada
+            statusImageView.setImageResource(R.drawable.notload) //Imagen Error no cargada
         }
         CourseApiSatatus.DONE -> {
             Log.e("Jose","DONE")

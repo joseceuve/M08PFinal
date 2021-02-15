@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import cat.copernic.pfinal.jose.m08pfinal.databinding.AspectoElementoBinding
+import cat.copernic.pfinal.jose.m08pfinal.databinding.FragmentDetalleBinding
 import cat.copernic.pfinal.jose.m08pfinal.databinding.FragmentVistasBinding
 import cat.copernic.pfinal.jose.m08pfinal.network.CourseProperty
 
@@ -13,10 +15,10 @@ import cat.copernic.pfinal.jose.m08pfinal.network.CourseProperty
 class AdaptadorFotoGrid(private val onClickListener: OnClickListener): ListAdapter<CourseProperty, AdaptadorFotoGrid.CursePropertyViewHolder>(DiffCallback) {
 
 
-    class CursePropertyViewHolder(private var binding: FragmentVistasBinding):
+    class CursePropertyViewHolder(private var binding: AspectoElementoBinding):
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(marsProperty: CourseProperty) {
-           // binding.property = marsProperty creo que es la propiedad GONE O VISIBLE
+        fun bind(curseProperty: CourseProperty) {
+            binding.property = curseProperty
             Log.e("Jose","CurseProperty")
             binding.executePendingBindings()
         }
@@ -41,7 +43,7 @@ class AdaptadorFotoGrid(private val onClickListener: OnClickListener): ListAdapt
     override fun onCreateViewHolder(parent: ViewGroup,
                                     viewType: Int): CursePropertyViewHolder {
         Log.e("Jose","onCreate")
-        return CursePropertyViewHolder(FragmentVistasBinding.inflate(LayoutInflater.from(parent.context)))
+        return CursePropertyViewHolder(AspectoElementoBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     /**

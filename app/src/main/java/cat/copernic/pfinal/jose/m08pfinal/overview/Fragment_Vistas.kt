@@ -32,7 +32,7 @@ class Fragment_Vistas : Fragment() {
         })
         viewModel.navigateToSelectedProperty.observe(this, Observer {
             if (null != it){
-                this.findNavController().navigate(Fragment_VistasDirections.actionFragmentVistasToFragmentDetalle(it))
+                this.findNavController().navigate(Fragment_VistasDirections.actionShowDetail(it))
                 viewModel.displayPropertyDetailComplete()
             }
         })
