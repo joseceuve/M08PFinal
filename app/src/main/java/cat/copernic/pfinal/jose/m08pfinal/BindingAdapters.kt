@@ -31,7 +31,7 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<CourseProperty>?) {
 fun bindImage(imgView: ImageView, imgUrl: String?) {
     Log.e("Jose","Imagen")
     imgUrl?.let {
-        val imgUri = imgUrl.toUri().buildUpon().scheme("https").build()
+        val imgUri = imgUrl.toUri().buildUpon().scheme("http").build()
         Glide.with(imgView.context)
             .load(imgUri)
             .apply(RequestOptions()
