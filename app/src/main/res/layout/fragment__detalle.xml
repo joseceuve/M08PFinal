@@ -15,29 +15,33 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:padding="16dp">
 
             <ImageView
                 android:id="@+id/main_photo_image"
                 android:layout_width="0dp"
                 android:layout_height="266dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
                 android:scaleType="centerCrop"
+                android:visibility="visible"
                 app:imageUrl="@{viewModel.selectedProperty.logo}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/backgrounds/scenic"
-                android:visibility="visible"/>
+                tools:src="@tools:sample/backgrounds/scenic" />
 
             <TextView
                 android:id="@+id/textoUno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:textColor="#de000000"
-                android:textSize="39sp"
+                android:layout_marginTop="24dp"
                 android:text="@{viewModel.selectedProperty.titol}"
+                android:textColor="#DE13619E"
+                android:textSize="39sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_photo_image"
                 tools:text="Nissan Foundation" />
@@ -46,14 +50,15 @@
                 android:id="@+id/textoDos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="#de000000"
-                android:textSize="20sp"
+                android:layout_marginTop="32dp"
                 android:text="@{viewModel.selectedProperty.empOrga}"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#DE000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/textoUno"
                 app:layout_constraintTop_toBottomOf="@+id/textoUno"
                 tools:text="Nissan" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 </layout>

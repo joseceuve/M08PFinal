@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import cat.copernic.pfinal.jose.m08pfinal.R
 
 import cat.copernic.pfinal.jose.m08pfinal.databinding.FragmentDetalleBinding
 

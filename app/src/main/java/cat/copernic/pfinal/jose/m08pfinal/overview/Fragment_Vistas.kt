@@ -3,10 +3,13 @@ package cat.copernic.pfinal.jose.m08pfinal.overview
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import cat.copernic.pfinal.jose.m08pfinal.MainActivity
 import cat.copernic.pfinal.jose.m08pfinal.R
 import cat.copernic.pfinal.jose.m08pfinal.databinding.FragmentVistasBinding
 import cat.copernic.pfinal.jose.m08pfinal.network.CourseApiFilter
@@ -16,22 +19,23 @@ import cat.copernic.pfinal.jose.m08pfinal.network.CourseApiFilter
  */
 class Fragment_Vistas : Fragment() {
     private val viewModel: VistasViewModel by lazy {
-        Log.e("Jose","viewModel")
+        Log.e("Jose", "viewModel")
         ViewModelProvider(this).get(VistasViewModel::class.java)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.e("Jose","Fragment_Vistas")
+        Log.e("Jose", "Fragment_Vistas")
         val binding = FragmentVistasBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        binding.photosGrid.adapter = AdaptadorFotoGrid(AdaptadorFotoGrid.OnClickListener{
+        binding.photosGrid.adapter = AdaptadorFotoGrid(AdaptadorFotoGrid.OnClickListener {
             viewModel.diplayPropertyDetails(it)
         })
         viewModel.navigateToSelectedProperty.observe(this, Observer {
-            if (null != it){
+            if (null != it) {
                 this.findNavController().navigate(Fragment_VistasDirections.actionShowDetail(it))
                 viewModel.displayPropertyDetailComplete()
             }
@@ -45,14 +49,23 @@ class Fragment_Vistas : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    /*
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            viewModel.updateFilter(
+                when(item.itemId){
+                    //R.id.show_rent_menu -> CourseApiFilter.SHOW_RENT
+                    //R.id.show_buy_menu -> CourseApiFilter.SHOW_BUY
+                    else -> CourseApiFilter.SHOW_ALL
+                }
+            )
+            return true
+        }
+    */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        viewModel.updateFilter(
-            when(item.itemId){
-                R.id.show_rent_menu -> CourseApiFilter.SHOW_RENT
-                R.id.show_buy_menu -> CourseApiFilter.SHOW_BUY
-                else -> CourseApiFilter.SHOW_ALL
-            }
-        )
+        when (item.itemId) {
+            R.id.about -> Toast.makeText(activity, "Jose Colacios", Toast.LENGTH_LONG).show()
+
+        }
         return true
     }
 

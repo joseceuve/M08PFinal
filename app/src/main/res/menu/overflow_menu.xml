@@ -3,12 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/show_all_menu"
+        android:id="@+id/about"
         android:title="@string/shwAll" />
-    <item
-        android:id="@+id/show_rent_menu"
-        android:title="@string/shwName" />
-    <item
-        android:id="@+id/show_buy_menu"
-        android:title="@string/shwComprar" />
 </menu>
